@@ -1,0 +1,36 @@
+{
+  "builders": [{
+    "boot_command": [
+      "<esc><wait>",
+      "install <wait>",
+      "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
+      "debian-installer=en_US <wait>",
+      "auto <wait>",
+      "locale=en_US <wait>",
+      "netcfg/get_hostname={{ .Name }} <wait>",
+      "fb=false <wait>",
+      "debconf/frontend=noninteractive <wait>",
+      "console-setup/ask_detect=false <wait>",
+      "console-keymaps-at/keymap=en <wait>",
+      "keyboard-configuration/xkb-keymap=en <wait>",
+      "<enter><wait>"
+    ],
+    "boot_wait": "3s",
+    "guest_os_type": "Debian_64",
+    "http_directory": "http",
+    "iso_checksum": "f8446a84356a6bcbf79201cc9f46063f",
+    "iso_checksum_type": "md5",
+    "iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.5.0-amd64-netinst.iso",
+    "output_directory": "builds/",
+    "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "type": "virtualbox-iso",
+    "vboxmanage": [
+      ["modifyvm", "{{ .Name }}", "--memory", "512"],
+      ["modifyvm", "{{ .Name }}", "--cpus", "2"]
+    ],
+    "vm_name": "debian-9.5"
+  }],
+  "description": "Debian for Docker base box"
+}
