@@ -17,6 +17,7 @@
     ],
     "boot_wait": "3s",
     "guest_os_type": "Debian_64",
+    "headless": true,
     "http_directory": "http",
     "iso_checksum": "f8446a84356a6bcbf79201cc9f46063f",
     "iso_checksum_type": "md5",
