@@ -33,5 +33,16 @@
     ],
     "vm_name": "debian-9.5"
   }],
-  "description": "Debian for Docker base box"
+  "description": "Debian 9.5 for Docker 18.06.1-ce base box",
+  "provisioners": [
+    {
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+      "scripts": [
+        "scripts/update.sh",
+        "scripts/provision.sh",
+        "scripts/sudoers.sh"
+      ],
+      "type": "shell"
+    }
+  ]
 }

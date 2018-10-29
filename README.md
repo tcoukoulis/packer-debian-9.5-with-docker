@@ -16,5 +16,4 @@ packer build debian-9.5-stretch.json
 
 ## Next steps
 
-* minimize initial dependencies
-* provision the server with docker
+* build the vagrant box
