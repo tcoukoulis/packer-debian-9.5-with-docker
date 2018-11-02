@@ -16,6 +16,7 @@
       "<enter><wait>"
     ],
     "boot_wait": "3s",
+    "guest_additions_path": "VBoxGuestAdditions-{{.Version}}.iso",
     "guest_os_type": "Debian_64",
     "headless": true,
     "http_directory": "http",
@@ -34,15 +35,31 @@
     "vm_name": "debian-9.5"
   }],
   "description": "Debian 9.5 for Docker 18.06.1-ce base box",
+  "post-processors": [
+    {
+      "compression_level": 9,
+      "only": ["virtualbox-iso"],
+      "output": "boxes/debian-{{ user `debian_version`}}-amd64-{{.Provider}}.box",
+      "type": "vagrant"
+    }
+  ],
   "provisioners": [
     {
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
         "scripts/update.sh",
+        "scripts/networking.sh",
         "scripts/provision.sh",
-        "scripts/sudoers.sh"
+        "scripts/sudoers.sh",
+        "scripts/sshd.sh",
+        "scripts/vagrant.sh",
+        "scripts/guest_addons.sh",
+        "scripts/cleanup.sh"
       ],
       "type": "shell"
     }
-  ]
+  ],
+  "variables": {
+    "debian_version": "9.5.0"
+  }
 }
