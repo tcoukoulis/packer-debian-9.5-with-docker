@@ -1,2 +1,3 @@
 #!/bin/sh
-apt-get update
+# Downloads package info from all configured sources 
+apt update

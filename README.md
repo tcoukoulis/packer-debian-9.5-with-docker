@@ -25,3 +25,4 @@ Big thanks to [Pierre Mavro](https://github.com/deimosfr) for [packer-debian](ht
 
 * Document what everything in the scripts directory does
 * Get sudo working for vagrant without neeeding sudo (optional)
+* Investigate correct permissions for scripts files
