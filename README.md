@@ -23,6 +23,5 @@ Big thanks to [Pierre Mavro](https://github.com/deimosfr) for [packer-debian](ht
 
 ## Next steps
 
-* Document what everything in `preseed.cfg` does
 * Document what everything in the scripts directory does
 * Get sudo working for vagrant without neeeding sudo (optional)
