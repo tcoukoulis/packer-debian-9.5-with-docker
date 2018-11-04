@@ -20,8 +20,3 @@ After building, the vagrant box will be output in the `boxes/` directory.
 ## Thanks
 
 Big thanks to [Pierre Mavro](https://github.com/deimosfr) for [packer-debian](https://github.com/deimosfr/packer-debian) which served as a foundation and taught me a lot about Debian in the process.
-
-## Next steps
-
-* Document what everything in the scripts directory does
-* Investigate correct permissions for scripts files
