@@ -1,21 +1,11 @@
 #!/bin/bash
 
-### WARNING: DO NOT FORGET TO REMOVE IT IF ACCESSIBLE FROM OUTSIDE !!!
+VAGRANT_USER="vagrant"
+HOMEDIR=`su - $VAGRANT_USER -c 'echo $HOME'`
 
-function add_vagrant_key {
-    homedir=$(su - $1 -c 'echo $HOME')
-    mkdir -p $homedir/.ssh
-    curl -L 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' -o $homedir/.ssh/authorized_keys2
-    chown -Rf $1. $homedir/.ssh
-    chmod 700 $homedir/.ssh
-    chmod 600 $homedir/.ssh/authorized_keys2
-}
-
-if [ $(grep -c vagrant /etc/passwd) == 0 ] ; then
-    useradd vagrant -m
-fi
-
-# Add public key to vagrant user
-add_vagrant_key vagrant
-
-
+# Adds the vagrant public key to the vagrant user
+mkdir -p $HOMEDIR/.ssh
+chmod 700 $HOMEDIR/.ssh
+curl -L 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' -o $HOMEDIR/.ssh/authorized_keys
+chown -Rf $VAGRANT_USER. $HOMEDIR/.ssh
+chmod 600 $HOMEDIR/.ssh/authorized_keys
