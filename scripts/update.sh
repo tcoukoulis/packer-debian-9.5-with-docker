@@ -1,3 +1,3 @@
 #!/bin/sh
 # Downloads package info from all configured sources 
-apt update
+apt-get update

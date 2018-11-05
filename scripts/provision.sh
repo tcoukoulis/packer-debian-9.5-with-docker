@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Install Docker prerequisites
-apt install -y apt-transport-https \
+apt-get install -y apt-transport-https \
 	ca-certificates \
 	gnupg2 \
 	software-properties-common
@@ -16,7 +16,7 @@ add-apt-repository \
 	stable"
 
 # Update the system to include Docker resources
-apt update
+apt-get update
 
 # Install Docker Community Edition
-apt install -y docker-ce
+apt-get install -y docker-ce
