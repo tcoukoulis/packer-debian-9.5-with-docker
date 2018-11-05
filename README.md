@@ -15,7 +15,11 @@ I wanted a Vagrant base box that used Debian 9.5 with Docker installed by defaul
 packer build debian-9.5-stretch.json
 ```
 
+## Post build
+
 After building, the vagrant box will be output in the `boxes/` directory.
+
+Add it locally using `vagrant box add <box-name> boxes/debian-9.5.0-amd64-virtualbox.box`.
 
 ## Thanks
 
