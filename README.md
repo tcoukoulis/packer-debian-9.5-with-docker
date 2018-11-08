@@ -1,8 +1,8 @@
-# Packer Debian 9.5 with Docker for Vagrant
+# Packer Debian with Docker
 
 ## Purpose
 
-I wanted a Vagrant base box that used Debian 9.5 with Docker installed by default. I couldn't find one pre-built, so I built one.
+I wanted a Vagrant base box that used the latest version of Debian with Docker installed by default. I couldn't find one pre-built, so I built one.
 
 ## Requirements
 
@@ -12,7 +12,7 @@ I wanted a Vagrant base box that used Debian 9.5 with Docker installed by defaul
 ## Build
 
 ```
-packer build debian-9.5-stretch.json
+packer build debian-9.5.0-stretch.json
 ```
 
 ## Post build
