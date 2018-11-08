@@ -4,10 +4,11 @@
 
 I wanted a Vagrant base box that used the latest version of Debian with Docker installed by default. I couldn't find one pre-built, so I built one.
 
-## Requirements
+## Dependencies
 
 * [Packer](https://www.packer.io/)
 * [Vagrant](https://www.vagrantup.com/)
+* [jq](https://stedolan.github.io/jq/download/)
 
 ## Build
 
