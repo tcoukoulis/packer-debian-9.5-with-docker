@@ -22,7 +22,7 @@
     "http_directory": "http",
     "iso_checksum": "f8446a84356a6bcbf79201cc9f46063f",
     "iso_checksum_type": "md5",
-    "iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.5.0-amd64-netinst.iso",
+    "iso_url": "https://cdimage.debian.org/mirror/cdimage/archive/9.5.0/amd64/iso-cd/debian-9.5.0-amd64-netinst.iso",
     "output_directory": "builds/",
     "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
     "ssh_username": "vagrant",
