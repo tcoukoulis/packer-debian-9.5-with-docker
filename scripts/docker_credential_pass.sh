@@ -1,5 +1,9 @@
 #!/bin/bash --
 
+# Install pass to encrypt docker login information
+# Install haveged to generate sufficient entropy for gpg key creation
+apt-get install pass haveged -y
+
 # Define the vagrant user directory
 VAGRANT_HOME="/home/vagrant"
 
@@ -23,4 +27,3 @@ tar xf docker-credential-pass-v0.6.0-amd64.tar.gz
 
 # Remove downloaded file
 rm *.tar.gz
-

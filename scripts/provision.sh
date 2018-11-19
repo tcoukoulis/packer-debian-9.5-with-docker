@@ -4,8 +4,7 @@
 apt-get install -y apt-transport-https \
 	ca-certificates \
 	gnupg2 \
-	software-properties-common \
-	pass
+	software-properties-common
 
 # Add Docker GPG key to system
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
