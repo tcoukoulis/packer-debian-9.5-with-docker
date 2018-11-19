@@ -13,14 +13,14 @@ I wanted a Vagrant base box that used the latest version of Debian with Docker i
 ## Build
 
 ```
-packer build debian-9.5.0-stretch.json
+packer build debian-9.6.0-stretch.json
 ```
 
 ## Post build
 
 After building, the vagrant box will be output in the `boxes/` directory.
 
-Add it locally using `vagrant box add <box-name> boxes/debian-9.5.0-amd64-virtualbox.box`.
+Add it locally using `vagrant box add <box-name> boxes/debian-9.6.0-amd64-virtualbox.box`.
 
 ## Thanks
 
