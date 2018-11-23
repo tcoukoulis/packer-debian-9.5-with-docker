@@ -1,29 +1,29 @@
 #!/bin/bash --
 
 # Define the composer version to download
-COMPOSE_VERSION="1.23.1"
+VERSION="1.23.1"
 
 # Define the expected SHA256 hash for the downloaded file
-COMPOSE_HASH="c176543737b8aea762022245f0f4d58781d3cb1b072bc14f3f8e5bb96f90f1a2"
+HASH="c176543737b8aea762022245f0f4d58781d3cb1b072bc14f3f8e5bb96f90f1a2"
 
 # Define the download path for Docker Compose
-COMPOSE_URL="https://github.com/docker/compose/releases/download/$COMPOSE_VERSION/docker-compose-Linux-x86_64"
+URL="https://github.com/docker/compose/releases/download/$VERSION/docker-compose-Linux-x86_64"
 
 # Define where to save the downloaded file
-COMPOSE_TARGET="/home/vagrant/lib"
+TARGET_DIR="/home/vagrant/lib"
 
 # Define the downloaded file name
-COMPOSE_FILE="$COMPOSE_TARGET/docker-compose"
+FILE="$TARGET_DIR/docker-compose"
 
-curl -L $COMPOSE_URL -o $COMPOSE_FILE
+curl -L $URL -o $FILE
 
 # Get SHA256 hash from downloaded file
-FILE_HASH="`sha256sum $COMPOSE_FILE | cut -d ' ' -f 1`"
+FILE_HASH="`sha256sum $FILE | cut -d ' ' -f 1`"
 
 # If hash check passes enable file to be executable, otherwise bail
-if [ "$FILE_HASH" = "$COMPOSE_HASH" ]
+if [ "$FILE_HASH" = "$HASH" ]
 then
-	chmod +x $COMPOSE_FILE
+	chmod +x $FILE
 else
 	echo "Downloaded file hash did not meet expectations"
 	exit 1
