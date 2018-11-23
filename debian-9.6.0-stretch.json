@@ -52,6 +52,7 @@
         "scripts/provision.sh",
         "scripts/docker_credential_pass.sh",
         "scripts/docker_compose.sh",
+        "scripts/docker_machine.sh",
         "scripts/sudoers.sh",
         "scripts/sshd.sh",
         "scripts/vagrant.sh",
